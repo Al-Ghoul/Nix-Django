@@ -2,7 +2,7 @@
 
 # Intro
 
-This is a NixOS [hydra](https://nixos.wiki/wiki/Hydra) [Django](https://www.djangoproject.com/) build example.
+This is a NixOS [hydra](https://nixos.wiki/wiki/Hydra) & [Django](https://www.djangoproject.com/) build example.
 
 # Adding this project (or a fork) to hydra
 
