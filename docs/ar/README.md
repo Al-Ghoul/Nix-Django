@@ -2,7 +2,7 @@ For English refer to [Docs](../../)
 
 # مُقدمة
 
-هذا هو مثال لبناء برنامج C++ علي [Hydra](https://nixos.wiki/wiki/Hydra) (تُنطق هَيدرا) (لا نستخدم أدوات GNU لإبقاء المثال بسيطاً).
+هذا هو مثال لبناء برنامج لـ[Django](https://www.djangoproject.com/) علي [Hydra](https://nixos.wiki/wiki/Hydra) (تُنطق هَيدرا)
 
 # كيفية إضافة هذا المشروع (أو نسخة منه) لهيدرا
 
