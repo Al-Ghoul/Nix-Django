@@ -35,7 +35,7 @@ To add this project or even a fork of it to your local hydra's instance, follow 
 2. Click on actions -> Create jobset.
 3. Identifier: Nix-Django-Build (Keeping State: Enabled, Visible: Ticked).
 4. Type: Legacy (I'll provide a flake example later).
-5. Description: Nix-Hello's build jobset.
+5. Description: Nix-Django's build jobset.
 6. Nix expression: release.nix **in** siteSrc.
 7. Check interval: 60 (seconds).
 8. Scheduling shares: 1.
