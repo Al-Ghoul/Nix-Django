@@ -3,8 +3,8 @@
 }:
   let
     pkgs = (import <nixpkgs> { system = builtins.currentSystem or "x86_64-linux"; });
-    jobs = with pkgs; {
-      django-build = stdenvNoCC.mkDerivation rec {
+    jobs = with pkgs; rec {
+      build = stdenvNoCC.mkDerivation (finalAttrs: rec {
         name = "Django-build";
         src = siteSrc;
 
@@ -48,12 +48,6 @@
           sqlparse
         ];
 
-        buildPhase = ''
-          runHook preBuild
-          python manage.py test tests
-          runHook postBuild
-        '';
-
         installPhase = ''
           runHook preInstall
           mkdir -p $out
@@ -61,9 +55,18 @@
           runHook postInstall
         '';
         
-        doDist = false;
         doCheck = false;
-      };
+        doDist = false;
+
+        passthru.tests.django-tests = runCommand "run-tests" { buildInputs = [ build.buildInputs ]; }
+        ''
+          cd ${build.out}
+          python manage.py test tests
+          touch $out
+        '';
+      });
+
+      tests = build.tests;
     };
   in
     jobs
